@@ -23,7 +23,7 @@ public class DBHelper {
             + " (id integer primary key autoincrement, date text not null, department text not null, workerid integer, name text not null, remark text not null);";
     private static final String DB_CREATE_ORDER = "CREATE TABLE "
             + MvcModelOrder.TABLE_NAME
-            + " (id integer primary key autoincrement, date text not null, description text not null, orderid integer, product text not null, amount integer, closed integer);";
+            + " (id integer primary key autoincrement, date text not null, description text not null, orderid integer, product text not null, amount integer, category text not null, closed integer);";
 
     static SQLiteDatabase database;
     SQLiteOpenHelper helper;

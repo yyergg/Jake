@@ -31,6 +31,11 @@ public class MvcControllerProduct {
         model.deleteProduct("title='" + title + "'");
     }
 
+    public String getCategory(final String title) {
+        String s = model.getCategory(title);
+        return s;
+    }
+
     public void deleteProduct(final long id) {
         model.deleteProduct("id='" + id + "'");
     }

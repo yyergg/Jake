@@ -44,7 +44,7 @@ public class MvcModelOrder {
         c = this.database.query(
                 true,
                 MvcModelOrder.TABLE_NAME,
-                new String[]{"orderid","description","date","product","amount"},
+                new String[]{"orderid","description","date","product","amount","category"},
                 "orderid='" + id.toString() + "'",
                 null, null, null, "date", null);
         return c;

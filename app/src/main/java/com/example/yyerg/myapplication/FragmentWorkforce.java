@@ -125,6 +125,10 @@ public class FragmentWorkforce extends Fragment{
         this.btDate.setText("    " + this.year.toString() + "-" + this.month.toString() + "-" + this.day_of_month.toString());
     }
 
+    public Integer getAndroidMonth(){
+        return this.month - 1;
+    }
+
     private final View.OnClickListener handleDateClickEvent = new View.OnClickListener(){
         @Override
         public void onClick(View v) {
@@ -132,7 +136,7 @@ public class FragmentWorkforce extends Fragment{
                     getActivity(),
                     myDateListener,
                     FragmentWorkforce.this.year,
-                    FragmentWorkforce.this.month,
+                    FragmentWorkforce.this.getAndroidMonth(),
                     FragmentWorkforce.this.day_of_month);
             dialogDatePicker.show();
         }

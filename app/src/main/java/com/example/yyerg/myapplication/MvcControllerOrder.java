@@ -37,9 +37,11 @@ public class MvcControllerOrder {
     public class ProductInOrder{
         public String name;
         public Integer amount;
-        public ProductInOrder(String name, Integer amount){
+        public String category;
+        public ProductInOrder(String name, Integer amount, String category){
             this.name = name;
             this.amount = amount;
+            this.category = category;
         }
     }
 
@@ -62,7 +64,7 @@ public class MvcControllerOrder {
         if (c != null) {
             c.moveToFirst();
             while (c.isAfterLast() == false) {
-                ProductInOrder e = new ProductInOrder(c.getString(3),c.getInt(4));
+                ProductInOrder e = new ProductInOrder(c.getString(3),c.getInt(4),c.getString(5));
                 products.add(e);
                 c.moveToNext();
             }
@@ -86,7 +88,7 @@ public class MvcControllerOrder {
         return orders;
     }
 
-    public void AddSingleProduct(Integer orderId,String date,String description,String name,String amount){
+    public void AddSingleProduct(Integer orderId,String date,String description,String name,String amount, String category){
         final ContentValues data = new ContentValues();
         data.put("date", date);
         data.put("description", description);
@@ -94,6 +96,7 @@ public class MvcControllerOrder {
         data.put("product", name);
         data.put("amount", Integer.valueOf(amount));
         data.put("closed", 0);
+        data.put("category", category);
         model.AddSingleProduct(data);
     }
 }

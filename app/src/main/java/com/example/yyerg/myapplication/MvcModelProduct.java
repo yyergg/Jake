@@ -29,6 +29,15 @@ public class MvcModelProduct {
         this.database.delete(MvcModelProduct.TABLE_NAME, field_params, null);
     }
 
+    public String getCategory(String title){
+        final Cursor c = this.database.query(
+                MvcModelProduct.TABLE_NAME,
+                new String[]{"title","category"},
+                "title='" + title+"'", null, null, null,"title");
+        c.moveToFirst();
+        return c.getString(1);
+    }
+
     public Cursor loadAllProducts() {
         Log.d(MainActivity.APP_TAG, "loadAllProducts()");
         final Cursor c = this.database.query(

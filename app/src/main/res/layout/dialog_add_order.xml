@@ -13,58 +13,57 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Date:"
-    android:textColor="#000000"
-    android:textAppearance="?android:attr/textAppearanceLarge" />
+    android:textColor="#000000"/>
 
     <Button
         android:id="@+id/btDate"
-        android:layout_width="150dip"
-        android:layout_height="38dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text=""
         android:layout_toRightOf="@+id/tvDateTag"
         android:layout_alignTop="@+id/tvDateTag"
         style="@android:style/Widget.DeviceDefault.Spinner"/>
 
     <TextView
-        android:id="@+id/tvDescriptionTag"
+        android:id="@+id/tvEstimatedTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Description:"
+        android:text="Estimated Work Days:"
         android:textColor="#000000"
-        android:layout_below="@+id/tvDateTag"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_below="@+id/tvDateTag"/>
+
+    <TextView
+        android:id="@+id/tvEstimated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#000000"
+        android:layout_toRightOf="@+id/tvEstimatedTag"
+        android:layout_alignTop="@+id/tvEstimatedTag"/>
 
     <EditText
         android:id="@+id/etDescription"
-        android:layout_width="150dip"
-        android:layout_height="32dip"
-        android:text=""
-        android:layout_toRightOf="@+id/tvDescriptionTag"
-        android:layout_alignTop="@+id/tvDescriptionTag" />
-
-    <TextView
-        android:id="@+id/tvProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Products:"
-        android:textColor="#000000"
-        android:layout_below="@+id/tvDescriptionTag"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:hint="Order Description"
+        android:layout_below="@+id/tvEstimatedTag"/>
 
     <Spinner
         android:id="@+id/spProduct"
-        android:layout_width="100dip"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvProduct"/>
+        android:layout_below="@+id/etDescription"/>
+
     <EditText
         android:id="@+id/etAmount"
-        android:layout_width="100dip"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="Amount"
         android:layout_alignTop="@+id/spProduct"
         android:layout_toRightOf="@+id/spProduct"/>
     <Button
         android:id="@+id/btAdd"
-        android:layout_width="100dip"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add"
         android:layout_alignTop="@+id/etAmount"
@@ -78,13 +77,13 @@
     <Button
         android:id="@+id/btCancel"
         android:layout_width="wrap_content"
-        android:layout_height="100dip"
+        android:layout_height="wrap_content"
         android:text="Cancel"
         android:layout_below="@+id/tbOrder"/>
     <Button
     android:id="@+id/btSubmit"
         android:layout_width="wrap_content"
-        android:layout_height="100dip"
+        android:layout_height="wrap_content"
         android:text="Submit"
         android:layout_alignTop="@+id/btCancel"
         android:layout_toRightOf="@+id/btCancel"/>
